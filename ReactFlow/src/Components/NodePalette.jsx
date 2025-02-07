@@ -1,53 +1,20 @@
-import React from 'react';
+import React from "react"
+import { Search, X } from "lucide-react"
+import '../index.css'
+export const NodePalette = ({onClose}) => {
 
-export const NodePalette = ({ onClose, onDragStart }) => {
-  const nodeTypes = [
-    {
-      type: 'askAI',
-      label: 'Ask AI',
-      icon: 'AI',
-      category: 'AI Tools'
-    },
-    {
-      type: 'extractData',
-      label: 'Extract Data',
-      icon: '📊',
-      category: 'Data Processing'
-    }
-    // Add more node types here
-  ];
-
-  const handleDragStart = (event, nodeType) => {
-    event.dataTransfer.setData('application/reactflow', JSON.stringify({
-      type: nodeType.type,
-      data: { label: nodeType.label }
-    }));
-    event.dataTransfer.effectAllowed = 'move';
-    onDragStart?.(event, nodeType);
-  };
-
-  return (
-    <div className="node-palette">
-      <div className="palette-header">
-        <h3>Add Node</h3>
-        <button onClick={onClose} className="close-button">×</button>
+  return(
+    <div className="absolute top-5 left-5 z-10   w-[300px]  max-w-2xl bg-white rounded-lg shadow-lg overflow-hidden ">
+      <div className="flex items-center justify-between px-4 pt-4">
+        <div className="flex gap-4">
+        <button className="text-black font-medium pb-2 border-b-2 border-pink-500">Node Library</button>
+        <button className="text-gray-500 font-medium pb-2" >Subflow Library</button>
+        </div>
+        <button  onClick={onClose} className='text-gray-400 hover:text-gray-600 '>
+        <X className="w-5 h-5" />
+        </button>
       </div>
-      <div className="palette-content">
-        {nodeTypes.map((nodeType, index) => (
-          <div
-            key={index}
-            className="palette-item"
-            draggable
-            onDragStart={(e) => handleDragStart(e, nodeType)}
-          >
-            <div className="item-icon">{nodeType.icon}</div>
-            <div className="item-details">
-              <div className="item-label">{nodeType.label}</div>
-              <div className="item-category">{nodeType.category}</div>
-            </div>
-          </div>
-        ))}
-      </div>
+
     </div>
-  );
-};
+  )
+}
