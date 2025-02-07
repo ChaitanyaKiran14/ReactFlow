@@ -10,7 +10,7 @@ export const NodePalette = ({onClose}) => {
         <button className="text-black font-medium pb-2 border-b-2 border-pink-500">Node Library</button>
         <button className="text-gray-500 font-medium pb-2" >Subflow Library</button>
         </div>
-        <button  onClick={onClose} className='text-gray-400 hover:text-gray-600 '>
+        <button onClick={onClose} className='text-gray-400  hover:rounded-full  hover:bg-gray-200  '>
         <X className="w-5 h-5" />
         </button>
       </div>
