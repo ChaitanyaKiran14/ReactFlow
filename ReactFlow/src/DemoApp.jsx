@@ -138,6 +138,10 @@ const NodePalette = ({ onClose, onDragStart }) => {
           <div key={category.category} className="mb-4">
             <h3 className="text-sm font-medium mb-2">{category.category}</h3>
             <div className="space-y-2">
+
+
+
+
               {category.items.map((item) => (
                 <div
                   key={item.id}
@@ -156,8 +160,7 @@ const NodePalette = ({ onClose, onDragStart }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )};
 
 // Main App Component
 const App = () => {
