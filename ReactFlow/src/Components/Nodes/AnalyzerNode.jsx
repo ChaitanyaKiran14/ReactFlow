@@ -11,7 +11,7 @@ const Analyzer = ({ data }) => {
         </div>
         <div className="flex-grow">
           <div className="text-gray-600 text-sm">Using AI</div>
-          <div className="text-gray-800 font-semibold">Categorizer</div>
+          <div className="text-gray-800 font-semibold">Analyzer</div>
         </div>
         <div className="flex items-center gap-2 text-sm">
           <span className="text-gray-600">Yes</span>
