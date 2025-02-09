@@ -1,7 +1,7 @@
 import React from "react";
 import { Search, X } from "lucide-react";
 
-export const NodePalette = ({ onClose }) => {
+export const NodePalette = ({ onClose, onDragStart }) => {
   const paletteNodes = [
     {
       category: 'Using AI',
@@ -83,278 +83,7 @@ export const NodePalette = ({ onClose }) => {
         { id: 'job-posting-scraper', label: 'Job Posting Scraper', icon: '🌐' },
       ]
     },
-    {
-      category: 'Random 1',
-      description: "Leverage AI for various tasks",
-      count: 15,
-      nodeIcon : "AI" ,
-      items: [
-        { 
-          id: 'ask-ai',  label: 'Ask AI',  type: 'random1',  icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu mr-1" style={{ color: 'rgb(246, 112, 183)' }}> <rect width="16" height="16" x="4" y="4" rx="2" /> <rect width="6" height="6" x="9" y="9" rx="1" />
-              <path d="M15 2v2" />
-              <path d="M15 20v2" />
-              <path d="M2 15h2" />
-              <path d="M2 9h2" />
-              <path d="M20 15h2" /> <path d="M20 9h2" /><path d="M9 2v2" />
-              <path d="M9 20v2" />  </svg>)
-        },
-        { 
-          id: 'extract-data', 
-          label: 'Extract Data', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-hard-drive-upload mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="m16 6-4-4-4 4" />
-              <path d="M12 2v8" />
-              <rect width="20" height="8" x="2" y="14" rx="2" />
-              <path d="M6 18h.01" />
-              <path d="M10 18h.01" />
-            </svg>
-          )
-        },
-        { 
-          id: 'summarizer', 
-          label: 'Summarizer', 
-          icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-              <circle cx="12" cy="12" r="1" />
-              <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-            </svg>)
-        },
-        { 
-          id: 'categorizer', 
-          label: 'Categorizer', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scroll-text mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M15 12h-5" />
-              <path d="M15 8h-5" />
-              <path d="M19 17V5a2 2 0 0 0-2-2H4" />
-              <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
-            </svg>
-          )
-        },
-        { 
-          id: 'analyzer', 
-          label: 'Analyzer', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-              <circle cx="12" cy="12" r="1" />
-              <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-            </svg>
-          )
-        },
-      ]
-    },
-    {
-      category: 'Random 2',
-      description: "Leverage AI for various tasks",
-      count: 15,
-      nodeIcon : "AI" ,
-      items: [
-        { 
-          id: 'ask-ai',  label: 'Ask AI',  type: 'random2',  icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu mr-1" style={{ color: 'rgb(246, 112, 183)' }}> <rect width="16" height="16" x="4" y="4" rx="2" /> <rect width="6" height="6" x="9" y="9" rx="1" />
-              <path d="M15 2v2" />
-              <path d="M15 20v2" />
-              <path d="M2 15h2" />
-              <path d="M2 9h2" />
-              <path d="M20 15h2" /> <path d="M20 9h2" /><path d="M9 2v2" />
-              <path d="M9 20v2" />  </svg>)
-        },
-        { 
-          id: 'extract-data', 
-          label: 'Extract Data', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-hard-drive-upload mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="m16 6-4-4-4 4" />
-              <path d="M12 2v8" />
-              <rect width="20" height="8" x="2" y="14" rx="2" />
-              <path d="M6 18h.01" />
-              <path d="M10 18h.01" />
-            </svg>
-          )
-        },
-        { 
-          id: 'summarizer', 
-          label: 'Summarizer', 
-          icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-              <circle cx="12" cy="12" r="1" />
-              <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-            </svg>)
-        },
-        { 
-          id: 'categorizer', 
-          label: 'Categorizer', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scroll-text mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M15 12h-5" />
-              <path d="M15 8h-5" />
-              <path d="M19 17V5a2 2 0 0 0-2-2H4" />
-              <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
-            </svg>
-          )
-        },
-        { 
-          id: 'analyzer', 
-          label: 'Analyzer', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-              <circle cx="12" cy="12" r="1" />
-              <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-            </svg>
-          )
-        },
-      ]
-    },
-    {
-      category: 'Random 3',
-      description: "Leverage AI for various tasks",
-      count: 15,
-      nodeIcon : "AI" ,
-      items: [
-        { 
-          id: 'ask-ai',  label: 'Ask AI',  type: 'random3',  icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu mr-1" style={{ color: 'rgb(246, 112, 183)' }}> <rect width="16" height="16" x="4" y="4" rx="2" /> <rect width="6" height="6" x="9" y="9" rx="1" />
-              <path d="M15 2v2" />
-              <path d="M15 20v2" />
-              <path d="M2 15h2" />
-              <path d="M2 9h2" />
-              <path d="M20 15h2" /> <path d="M20 9h2" /><path d="M9 2v2" />
-              <path d="M9 20v2" />  </svg>)
-        },
-        { 
-          id: 'extract-data', 
-          label: 'Extract Data', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-hard-drive-upload mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="m16 6-4-4-4 4" />
-              <path d="M12 2v8" />
-              <rect width="20" height="8" x="2" y="14" rx="2" />
-              <path d="M6 18h.01" />
-              <path d="M10 18h.01" />
-            </svg>
-          )
-        },
-        { 
-          id: 'summarizer', 
-          label: 'Summarizer', 
-          icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-              <circle cx="12" cy="12" r="1" />
-              <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-            </svg>)
-        },
-        { 
-          id: 'categorizer', 
-          label: 'Categorizer', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scroll-text mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M15 12h-5" />
-              <path d="M15 8h-5" />
-              <path d="M19 17V5a2 2 0 0 0-2-2H4" />
-              <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
-            </svg>
-          )
-        },
-        { 
-          id: 'analyzer', 
-          label: 'Analyzer', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-              <circle cx="12" cy="12" r="1" />
-              <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-            </svg>
-          )
-        },
-      ]
-    },
-    {
-      category: 'Random 4',
-      description: "Leverage AI for various tasks",
-      count: 15,
-      nodeIcon : "AI" ,
-      items: [
-        { 
-          id: 'ask-ai',  label: 'Ask AI',  type: 'random4',  icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu mr-1" style={{ color: 'rgb(246, 112, 183)' }}> <rect width="16" height="16" x="4" y="4" rx="2" /> <rect width="6" height="6" x="9" y="9" rx="1" />
-              <path d="M15 2v2" />
-              <path d="M15 20v2" />
-              <path d="M2 15h2" />
-              <path d="M2 9h2" />
-              <path d="M20 15h2" /> <path d="M20 9h2" /><path d="M9 2v2" />
-              <path d="M9 20v2" />  </svg>)
-        },
-        { 
-          id: 'extract-data', 
-          label: 'Extract Data', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-hard-drive-upload mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="m16 6-4-4-4 4" />
-              <path d="M12 2v8" />
-              <rect width="20" height="8" x="2" y="14" rx="2" />
-              <path d="M6 18h.01" />
-              <path d="M10 18h.01" />
-            </svg>
-          )
-        },
-        { 
-          id: 'summarizer', 
-          label: 'Summarizer', 
-          icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-              <circle cx="12" cy="12" r="1" />
-              <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-            </svg>)
-        },
-        { 
-          id: 'categorizer', 
-          label: 'Categorizer', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scroll-text mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M15 12h-5" />
-              <path d="M15 8h-5" />
-              <path d="M19 17V5a2 2 0 0 0-2-2H4" />
-              <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
-            </svg>
-          )
-        },
-        { 
-          id: 'analyzer', 
-          label: 'Analyzer', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
-              <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-              <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-              <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-              <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-              <circle cx="12" cy="12" r="1" />
-              <path d="M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0" />
-            </svg>
-          )
-        },
-      ]
-    },
+  
    
   ];
   return (
@@ -411,17 +140,27 @@ export const NodePalette = ({ onClose }) => {
                 <div className="text-gray-400">›</div>
               </div>
               <div className="grid grid-cols-2 gap-2">
-                {category.items.map((item) => (
-                  <button 
-                    key={item.id} 
-                    className="flex items-center gap-2 p-2.5 bg-white border border-gray-100 rounded-lg hover:border-gray-200 hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="w-6 h-6 bg-pink-100 rounded-lg flex items-center justify-center">
-                      {typeof item.icon === 'string' ? <span className="text-pink-500 text-xs">{item.icon}</span> : item.icon}
-                    </div>
-                    <span className="text-sm text-gray-700 truncate">{item.label}</span>
-                  </button>
-                ))}
+              {category.items.map((item) => (
+                <button 
+                  key={item.id}
+                  draggable
+                  onDragStart={(e) => onDragStart(e, {
+                    type: item.type,
+                    label: item.label
+                  })}
+                  className="flex items-center gap-2 p-2.5 bg-white border border-gray-100 rounded-lg hover:border-gray-200 hover:bg-gray-50 transition-colors"
+                >
+                  <div className="w-6 h-6 bg-pink-100 rounded-lg flex items-center justify-center">
+                    {typeof item.icon === 'string' ? (
+                      <span className="text-pink-500 text-xs">{item.icon}</span>
+                    ) : (
+                      item.icon
+                    )}
+                  </div>
+                  <span className="text-sm text-gray-700 truncate">{item.label}</span>
+                </button>
+              ))}
+              
               </div>
             </div>
           </div>
