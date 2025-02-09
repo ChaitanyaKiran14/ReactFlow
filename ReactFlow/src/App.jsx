@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useCallback } from 'react';
 import { NodePalette } from './Components/NodePalette';
 import AskAINode from './Components/Nodes/AskAINode';
+import ExtractData from './Components/Nodes/ExtractData';
+import Summarizer from './Components/Nodes/SummarizerNode';
+import Categorizer from './Components/Nodes/CategorizerNode';
+import Analyzer from './Components/Nodes/AnalyzerNode';
+
 import {
   ReactFlow,
   Controls,
@@ -18,7 +23,11 @@ const App = () => {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   
   const nodeTypes = {
-    askAI: AskAINode
+    askAI: AskAINode,
+    extractData : ExtractData,
+    summarizer : Summarizer,
+    categorizer : Categorizer,
+    analyzer : Analyzer,
   };
 
   const onConnect = useCallback(

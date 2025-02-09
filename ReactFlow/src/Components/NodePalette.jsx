@@ -19,21 +19,18 @@ export const NodePalette = ({ onClose, onDragStart }) => {
               <path d="M9 20v2" />  </svg>)
         },
         { 
-          id: 'extract-data', 
-          label: 'Extract Data', 
-          icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-hard-drive-upload mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
+          id: 'extract-data',  label: 'Extract Data',  type: 'extractData',   icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-hard-drive-upload mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
               <path d="m16 6-4-4-4 4" />
               <path d="M12 2v8" />
               <rect width="20" height="8" x="2" y="14" rx="2" />
               <path d="M6 18h.01" />
               <path d="M10 18h.01" />
-            </svg>
-          )
+            </svg>   )
         },
         { 
           id: 'summarizer', 
           label: 'Summarizer', 
+          type: 'summarizer',
           icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
               <path d="M3 7V5a2 2 0 0 1 2-2h2" />
               <path d="M17 3h2a2 2 0 0 1 2 2v2" />
@@ -45,7 +42,8 @@ export const NodePalette = ({ onClose, onDragStart }) => {
         },
         { 
           id: 'categorizer', 
-          label: 'Categorizer', 
+          label: 'Categorizer',
+          type: 'categorizer', 
           icon: (
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scroll-text mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
               <path d="M15 12h-5" />
@@ -58,6 +56,7 @@ export const NodePalette = ({ onClose, onDragStart }) => {
         { 
           id: 'analyzer', 
           label: 'Analyzer', 
+          type: 'analyzer', 
           icon: (
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-scan-eye mr-1" style={{ color: 'rgb(246, 112, 183)' }}>
               <path d="M3 7V5a2 2 0 0 1 2-2h2" />
