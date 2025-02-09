@@ -16,6 +16,8 @@ import '@xyflow/react/dist/style.css';
 
 const App = () => {
   const [showPalette, setShowPalette] = useState(false)
+  const [nodes, setNodes, onNodesChange] = useNodesState([])
+  const [edges, setEdges, onEdgesChange] = useEdgesState([])
 
   return(
   <div className='w-screen h-screen'>
@@ -33,7 +35,7 @@ const App = () => {
       />
     )}
 
-      <ReactFlow>
+      <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange}  >
       <Controls />
       <Background variant="dots" gap={10} size={1} />
       </ReactFlow>
@@ -43,5 +45,3 @@ const App = () => {
 }
 
 export default App
-
-

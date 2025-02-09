@@ -1,62 +1,63 @@
-import React from 'react';
-import { Handle, Position } from '@xyflow/react';
-
+import { Handle, Position } from "@xyflow/react";
 const AskAINode = ({ data }) => {
+
+
   return (
-    <div className="ask-ai-node">
-      <Handle type="target" position={Position.Top} />
-      <div className="node-header">
-        <div className="icon-container">
-          <div className="ai-icon">AI</div>
+    <div className="bg-white rounded-lg shadow-md min-w-[32rem]">
+      <Handle type="target"  position={Position.Top} />
+      <div className="bg-pink-50 p-4 rounded-t-lg flex items-center gap-3">
+        <div className="bg-pink-600 text-white w-8 h-8 flex items-center justify-center rounded">
+          AI
         </div>
-        <div className="header-content">
-          <div className="header-title">Using AI</div>
-          <div className="header-subtitle">Ask AI</div>
+        <div className="flex-grow">
+          <div className="text-gray-600 text-sm">Using AI</div>
+          <div className="text-gray-800 font-semibold">Ask AI</div>
         </div>
-        <div className="loop-mode">
-          Loop Mode
-          <label className="switch">
-            <input type="checkbox" />
-            <span className="slider"></span>
+        <div className="flex items-center gap-2 text-sm">
+          <span className="text-gray-600">Loop Mode</span>
+          <label className="relative inline-block w-10 h-5">
+            <input type="checkbox" className="hidden peer" />
+            <div className="absolute cursor-pointer inset-0 bg-gray-300 peer-checked:bg-pink-600 rounded-full">
+              <div className="absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-transform peer-checked:translate-x-5"></div>
+            </div>
           </label>
         </div>
       </div>
-      <div className="node-content">
-        <div className="input-section">
-          <label>Prompt</label>
+      
+      <div className="p-4 space-y-4">
+        <div>
+          <label className="block font-medium mb-1">Prompt</label>
           <input 
-            type="text" 
+            type="text"
             placeholder="Summarize the article in the context"
-            value={data.prompt || ''}
-            onChange={(e) => data.onChange?.('prompt', e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-pink-500 focus:border-transparent"
           />
         </div>
-        <div className="input-section">
-          <label>Context</label>
-          <input 
-            type="text" 
-            placeholder="[Optional] Additional context"
-            value={data.context || ''}
-            onChange={(e) => data.onChange?.('context', e.target.value)}
+        
+        <div>
+          <label className="block font-medium mb-1">Context</label>
+          <input
+            type="text"
+            placeholder="[Optional] This is additional context for the AI model that can be referenced in the prompt"
+            className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-pink-500 focus:border-transparent"
           />
         </div>
-        <div className="input-section">
-          <label>Choose AI model</label>
-          <select 
-            className="model-select"
-            value={data.model || 'claude-3-haiku'}
-            onChange={(e) => data.onChange?.('model', e.target.value)}
-          >
-            <option value="claude-3-haiku">Claude 3 Haiku</option>
-            <option value="claude-3-sonnet">Claude 3 Sonnet</option>
-            <option value="claude-3-opus">Claude 3 Opus</option>
+        
+        <div>
+          <label className="block font-medium mb-1">Choose AI model</label>
+          <select className="w-full p-2 border border-gray-300 rounded mb-2 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+            <option>Claude 3 Haiku</option>
+            <option>Claude 3 Sonnet</option>
+            <option>Claude 3 Opus</option>
           </select>
-          <button className="show-more">Show More Options</button>
+          <button className="text-gray-600 text-sm hover:text-gray-800">
+            Show More Options
+          </button>
         </div>
       </div>
-      <Handle type="source" position={Position.Bottom} />
+      <Handle type="source"  position={Position.Bottom} />
     </div>
   );
 };
 
-export default AskAINode;
+export default AskAINode
