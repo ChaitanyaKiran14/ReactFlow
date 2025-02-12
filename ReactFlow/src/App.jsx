@@ -7,6 +7,7 @@ import ExtractData from './Components/Nodes/ExtractData';
 import Summarizer from './Components/Nodes/SummarizerNode';
 import Categorizer from './Components/Nodes/CategorizerNode';
 import Analyzer from './Components/Nodes/AnalyzerNode';
+import PDFNode from './Components/Nodes/PDFNode';
 
 import {
   ReactFlow,
@@ -88,6 +89,11 @@ const App = () => {
       }
     };
 
+
+
+
+
+
     // Execute flow starting from each start node
     for (const startNode of startNodes) {
       await executeNodeAndChildren(startNode);
@@ -103,10 +109,12 @@ const App = () => {
   
   const nodeTypes = {
     askAI: AskAINode,
+    pdfGenerator: PDFNode,
     extractData : ExtractData,
     summarizer : Summarizer,
     categorizer : Categorizer,
     analyzer : Analyzer,
+
   };
 
   const onConnect = useCallback(

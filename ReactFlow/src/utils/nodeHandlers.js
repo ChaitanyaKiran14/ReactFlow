@@ -1,13 +1,23 @@
 export const nodeHandlers = {
-    askAI: (node) => {
-      console.log(`Executing AskAI Node: ${node.id}`);
-      return {
-        output: `AI Response: ${node.data.prompt}`,
-        nodeId: node.id,
-        type: node.type,
-        data: node.data,
-      };
-    },
+  askAI: (node) => {
+    console.log(`Executing AskAI Node: ${node.id}`);
+    return {
+      output: `AI Response: ${node.data.prompt}`,
+      nodeId: node.id,
+      type: node.type,
+      data: node.data,
+    };
+  },
+  pdfGenerator: (node) => {
+    console.log(`Executing PDFGeneration Node: ${node.id}`);
+    return {
+      output: `PDF Generated with content: ${node.data.content}`,
+      nodeId: node.id,
+      type: node.type,
+      data: node.data,
+    };
+  },
+
     extractData: (node) => {
       console.log(`Executing ExtractData Node: ${node.id}`);
       return {
