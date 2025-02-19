@@ -8,50 +8,18 @@ export const nodeHandlers = {
       data: node.data,
     };
   },
-  pdfGenerator: (node) => {
+  pdfGenerator: (node, previousOutput) => {
     console.log(`Executing PDFGeneration Node: ${node.id}`);
+    console.log(`Received input:`, previousOutput);
+    
+    const contentToUse = previousOutput || node.data.content || "No content provided";
+    
     return {
-      output: `PDF Generated with content: ${node.data.content}`,
+      output: `PDF Generated with content: ${contentToUse}`,
       nodeId: node.id,
       type: node.type,
       data: node.data,
     };
   },
-
-    extractData: (node) => {
-      console.log(`Executing ExtractData Node: ${node.id}`);
-      return {
-        output: `Extracted Data: ${node.data.source}`,
-        nodeId: node.id,
-        type: node.type,
-        data: node.data,
-      };
-    },
-    summarizer: (node) => {
-      console.log(`Executing Summarizer Node: ${node.id}`);
-      return {
-        output: `Summary: ${node.data.content.substring(0, 50)}...`,
-        nodeId: node.id,
-        type: node.type,
-        data: node.data,
-      };
-    },
-    categorizer: (node) => {
-      console.log(`Executing Categorizer Node: ${node.id}`);
-      return {
-        output: `Categorized as: ${node.data.category}`,
-        nodeId: node.id,
-        type: node.type,
-        data: node.data,
-      };
-    },
-    analyzer: (node) => {
-      console.log(`Executing Analyzer Node: ${node.id}`);
-      return {
-        output: `Analysis Result: ${node.data.input}`,
-        nodeId: node.id,
-        type: node.type,
-        data: node.data,
-      };
-    },
-  };
+  // Update other handlers similarly
+};

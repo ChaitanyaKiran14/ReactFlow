@@ -10,13 +10,21 @@ export const NodePalette = ({ onClose, onDragStart }) => {
       nodeIcon: "AI",
       items: [
         { 
-          id: 'ask-ai',  label: 'Ask AI',  type: 'askAI',  icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu mr-1" style={{ color: 'rgb(246, 112, 183)' }}> <rect width="16" height="16" x="4" y="4" rx="2" /> <rect width="6" height="6" x="9" y="9" rx="1" />
-              <path d="M15 2v2" />
-              <path d="M15 20v2" />
-              <path d="M2 15h2" />
-              <path d="M2 9h2" />
-              <path d="M20 15h2" /> <path d="M20 9h2" /><path d="M9 2v2" />
-              <path d="M9 20v2" />  </svg>)
+          id: 'ask-ai',  
+          label: 'Ask Gemini AI',  
+          type: 'askAI',  
+          icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu mr-1" style={{ color: 'rgb(79, 70, 229)' }}>
+            <rect width="16" height="16" x="4" y="4" rx="2" />
+            <rect width="6" height="6" x="9" y="9" rx="1" />
+            <path d="M15 2v2" />
+            <path d="M15 20v2" />
+            <path d="M2 15h2" />
+            <path d="M2 9h2" />
+            <path d="M20 15h2" />
+            <path d="M20 9h2" />
+            <path d="M9 2v2" />
+            <path d="M9 20v2" />
+          </svg>)
         },
         { 
           id: 'extract-data',  label: 'Extract Data',  type: 'extractData',   icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-hard-drive-upload mr-1" style={{ color: 'rgb(246, 112, 183)' }}>

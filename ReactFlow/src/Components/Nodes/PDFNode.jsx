@@ -32,13 +32,16 @@ const PDFNode = ({ data, id }) => {
         <div>
           <label className="block font-medium mb-1">Content</label>
           <textarea
-            placeholder="Enter content for PDF"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            onBlur={updateNodeData}
-            className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-            rows={4}
-          />
+              placeholder="Enter content for PDF"
+              value={content}
+              onChange={(e) => {
+                setContent(e.target.value);
+                updateNodeData(); // Update node data on change
+              }}
+              onBlur={updateNodeData} // Optional: Update on blur as well
+              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+              rows={4}
+            />
         </div>
 
         <button
@@ -53,4 +56,4 @@ const PDFNode = ({ data, id }) => {
   );
 };
 
-export default PDFNode; 
+export default PDFNode;
